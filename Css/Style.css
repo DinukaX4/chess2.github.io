@@ -1,0 +1,20 @@
+ * {
+            color: aliceblue;
+            background-color: black;
+           /* background-image: url('F:\Images\Wallpaper\Newfolder\3D_Wallpapers-881_PlIyPRj');
+            /*This is a comment*/
+        }
+
+        h3 {
+            color: red;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 72px;
+        }
+
+        #header-2,
+        header-1 {
+            font-size: 72px;
+        }
+        .dog{
+            background-color: green;
+        }
