@@ -4,10 +4,12 @@
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Chess-Game</title>
+    <link rel="stylesheet" href="Css/jquery-ui.css">
     <link rel="stylesheet" href="Css/bootstrap.css">
     <link rel="stylesheet" href="Css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="Css/bootstrap.min.css">
     <style>
+
         #board{
 
             width: 1000px;
@@ -20,6 +22,17 @@
             font-family: "Times New Roman";
             font-weight: bold;
         }
+        div{
+            border-bottom: none;
+            text-align: center;
+        }
+        img{
+            width: 80px;
+            height: 80px;
+            z-index:999;
+
+        }
+
 
 
     </style>
@@ -33,37 +46,67 @@
     <div class="col-xs-12 col-sm-12  col-lg-12">
         <div class="row">
             <div class="col-xs-2 col-sm-2 col-lg-2">A</div>
-            <div style="background-color: #1b6d85 ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">1
-                <div class="row"><div class="col-xs-12"><img src="Image/chess.png"></div></div>
+            <div id="A1" style="background-color: #1b6d85 ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">1
+                <img id="rok1" src="Image/Rook-black_256x256_32.png" class="img-responsive">
             </div>
-            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">2</div>
-            <div style="background-color: #1b6d85 ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">3</div>
-            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">4</div>
-            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">5</div>
-            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">6</div>
-            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">7</div>
-            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">8</div>
+            <div style="background-color: black; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">2
+                <img src="Image/Bishop-black_256x256_32.png" class="img-responsive">
+            </div>
+            <div style="background-color: #1b6d85 ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">3
+                <img src="Image/blackKnight.png" class="img-responsive">
+            </div>
+            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">4
+                <img src="Image/blackQuen.png" class="img-responsive">
+            </div>
+            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">5
+                <img src="Image/blackKing.png" class="img-responsive">
+            </div>
+            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">6
+                <img src="Image/blackKnight.png">
+            </div>
+            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">7
+                <img src="Image/Bishop-black_256x256_32.png">
+            </div>
+            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">8
+                <img src="Image/Rook-black_256x256_32.png">
+            </div>
 
 
             <div class="col-xs-2 col-sm-2 col-lg-2"></div>
         </div>
         <div class="row">
             <div class="col-xs-2 col-sm-2 col-lg-2">B</div>
-            <div style="background-color: black  ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">1</div>
-            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">2</div>
-            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">3</div>
-            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">4</div>
-            <div style="background-color: black; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">5</div>
-            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">6</div>
-            <div style="background-color: black; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">7</div>
-            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">8</div>
+            <div id="A2" style="background-color: black  ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">1
+                <img src="Image/blackpone.png">
+            </div>
+            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">2
+                <img src="Image/blackpone.png">
+            </div>
+            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">3
+                <img src="Image/blackpone.png">
+            </div>
+            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">4
+                <img src="Image/blackpone.png">
+            </div>
+            <div style="background-color: black; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">5
+                <img src="Image/blackpone.png">
+            </div>
+            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">6
+                <img src="Image/blackpone.png">
+            </div>
+            <div style="background-color: black; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">7
+                <img src="Image/blackpone.png">
+            </div>
+            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">8
+                <img src="Image/blackpone.png">
+            </div>
 
 
             <div class="col-xs-2 col-sm-2 col-lg-2"></div>
         </div>
         <div class="row">
             <div class="col-xs-2 col-sm-2 col-lg-2">C</div>
-            <div style="background-color: #1b6d85 ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">1</div>
+            <div id="A3" style="background-color: #1b6d85 ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">1</div>
             <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">2</div>
             <div style="background-color: #1b6d85 ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">3</div>
             <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">4</div>
@@ -119,28 +162,60 @@
         </div>
         <div class="row">
             <div class="col-xs-2 col-sm-2 col-lg-2">G</div>
-            <div style="background-color: #1b6d85 ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">1</div>
-            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">2</div>
-            <div style="background-color: #1b6d85 ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">3</div>
-            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">4</div>
-            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">5</div>
-            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">6</div>
-            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">7</div>
-            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">8</div>
+            <div style="background-color: #1b6d85 ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">1
+                <img src="Image/whitepone.png">
+            </div>
+            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">2
+                <img src="Image/whitepone.png">
+            </div>
+            <div style="background-color: #1b6d85 ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">3
+                <img src="Image/whitepone.png">
+            </div>
+            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">4
+                <img src="Image/whitepone.png">
+            </div>
+            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">5
+                <img src="Image/whitepone.png">
+            </div>
+            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">6
+                <img src="Image/whitepone.png">
+            </div>
+            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">7
+                <img src="Image/whitepone.png">
+            </div>
+            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">8
+                <img src="Image/whitepone.png">
+            </div>
 
 
             <div class="col-xs-2 col-sm-2 col-lg-2"></div>
         </div>
         <div class="row">
             <div class="col-xs-2 col-sm-2 col-lg-2">H</div>
-            <div style="background-color: black  ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">1</div>
-            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">2</div>
-            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">3</div>
-            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">4</div>
-            <div style="background-color: black; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">5</div>
-            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">6</div>
-            <div style="background-color: black; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">7</div>
-            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">8</div>
+            <div style="background-color: black  ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">1
+                <img src="Image/Rook-white_256x256_32.png">
+            </div>
+            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">2
+                <img src="Image/whiteBishop.png">
+            </div>
+            <div style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">3
+                <img src="Image/whiteKing.ico">
+            </div>
+            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">4
+                <img src="Image/King-white.ico">
+            </div>
+            <div style="background-color: black; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">5
+                <img src="Image/Queen-white_256x256_32.png">
+            </div>
+            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">6
+                <img src="Image/whiteBishop.png">
+            </div>
+            <div style="background-color: black; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">7
+                <img src="Image/King-white.ico">
+            </div>
+            <div style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">8
+                <img src="Image/Rook-white_256x256_32.png">
+            </div>
 
 
             <div class="col-xs-2 col-sm-2 col-lg-2"></div>
@@ -148,6 +223,10 @@
 
     </div>
 </div>
+
+<script src="Js/jquery-3.2.1.min.js"></script>
+<script src="Js/jquery-ui.js"></script>
+<script src="Js/HomeControler.js"></script>
 </body>
 
 
