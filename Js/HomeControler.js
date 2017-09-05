@@ -36,7 +36,10 @@ $("#BP-1").mouseover(function (evt) {
 $("#BP-1").mouseleave(function (evt) {
     $("#C1").css("background-color","#1b6d85");
     $("#D1").css("background-color","black");
-    $("#C1").droppable({disabled:true});
-    $("#D1").droppable({disabled:true});
+    if(bp1.top!==20){
+        $("#C1").droppable({disabled:true});
+        //$("#D1").droppable({disabled:true});
+    }
+
 
 });
