@@ -6,70 +6,159 @@ var parentsDiv;
 var tiles;
 var chesspices;
 var count;
+var color="White";
 $(document).ready(function () {
     chesspices = $(".chessPices");
-    tiles = $(".col-xs-1");
+    tiles = $(".col-xs-1.col-sm-1.col-lg-1");
     count = 0;
 });
 
 $("img").addClass("img-responsive");
+var ins=0;
 $(".chessPices").click(function (evt) {
+    ins=ins+1;
+    //console.log(ins);
     selectpices = $(this);
-    console.log(selectpices);
+    //console.log(selectpices);
 
 
-    if (!(selectpices.hasClass('selectedPath')) && selectpices.hasClass('chessPices')) {
+    if (!(selectpices.hasClass('afterClick')) && selectpices.hasClass('blackPone')) {
         bp1patch(selectpices);
         //console.log("ddd")
     }
-    console.log(count);
-});
+    if (!(selectpices.hasClass('afterClick')) && selectpices.hasClass('whitePone')) {
+       whitePone(selectpices);
+        console.log("White");
 
-function bp1patch(evt) {
+    }
+    //console.log(count);
+});
+function whitePone(evt) {
+
+
     selectpices = evt;
-    tiles.remove('selectedPath');
-    chesspices.remove('selectedpices');
+    tiles.remove('selectPath');
+    chesspices.remove('selectPath');
 
     var selectId = selectpices.parent().attr('id');
     var selectPiceId = selectpices.children('img').attr('id');
     var piceBrand = selectPiceId.substr(0, 2);
+    var fristLetter = selectId.charAt(0);
     var tilesL = selectId.charAt(0);
-    console.log(selectId);
-    console.log(selectPiceId);
-    console.log(piceBrand);
 
-    if (piceBrand == "bp") {
-        //$("#"+tilesL+3).css("background-color","green");
-        //$("#A4").css("background-color","green");
-        if(!($("#" + tilesL + 3).hasClass('chessPices'))){
-            $("#" + tilesL + 3).addClass('selectPath');
-            //$("#" + tilesL + 3).addClass('selectedPath');
-            selectpices.addClass('selectedPatch')
-            selectpices.removeClass('selectPatch');
+    var firstID = selectId.charAt(1);
+    // console.log(selectId);
+    // console.log(selectPiceId);
+    // console.log(piceBrand);
+
+    var indexoftheLetter = ($.inArray(fristLetter, tilesNames));
+    var indexOfNumber = ($.inArray(parseInt(firstID), tilesNumbers)
+    );
+    var tempID= tilesNames[indexoftheLetter] + tilesNumbers[indexOfNumber - 1];
+    console.log(tempID);
+    var i=indexoftheLetter;
+    var j = indexOfNumber ;
+
+    // console.log(whitePone);
+   //console.log("J " + j);
+    for (; j > 4; j--) {
+        console.log("J " + j);
+        tempID = tilesNames[i] + tilesNumbers[j-1];
+        console.log(tempID);
+
+        if (!($('#' + tempID+'>div').hasClass('chessPices'))&&(color==="white")) {
+            $('#' + tempID).addClass('selectPath');
+            //console.log(tempID);
+            selectpices.addClass('afterClick');
+
+        } else {
+            break;
+            //   }
+
         }
 
-        console.log($("#" + tilesL + 3).hasClass('selectedPath'));
 
-
-        console.log("#" + tilesL + 3);
-    } else {
-        console.log("Ohh! NO");
-    }
-    if (!(selectpices.hasClass())) {
 
     }
+    if (!($('#'+ tempID+'>div').hasClass('chessPices'))&&(color==="white")) {
+        $('#'+tempID).addClass('selectPath');
+        selectpices.addClass('afterClick');
+        selectpices.removeClass('selectPath');
+    }
+    color="Black"
+}
+
+function bp1patch(evt) {
+
+    selectpices = evt;
+    tiles.remove('selectPath');
+
+    chesspices.remove('selectPath');
+
+    var selectId = selectpices.parent().attr('id');
+    var selectPiceId = selectpices.children('img').attr('id');
+    var piceBrand = selectPiceId.substr(0, 2);
+    var fristLetter = selectId.charAt(0);
+    var tilesL = selectId.charAt(0);
+
+    var firstID = selectId.charAt(1);
+    // console.log(selectId);
+    // console.log(selectPiceId);
+    // console.log(piceBrand);
+
+    var indexoftheLetter = ($.inArray(fristLetter, tilesNames));
+    var indexOfNumber = ($.inArray(parseInt(firstID), tilesNumbers)
+    );
+    var tempID= tilesNames[indexoftheLetter] + tilesNumbers[indexOfNumber + 1];
+    console.log(tempID);
+    var i=indexoftheLetter;
+    var j = indexOfNumber + 1;
+    var whitePone="wp";
+    // console.log(whitePone);
+    // console.log("J " + j);
+    for (; j < 4; j++) {
+
+        tempID = tilesNames[i] + tilesNumbers[j];
+        console.log(tempID);
+
+            if (!($('#' + tempID+'>div').hasClass('chessPices'))&&(color==="Black")) {
+                $('#' + tempID).addClass('selectPath');
+                //console.log(tempID);
+                selectpices.addClass('afterClick');
+
+            } else {
+                break;
+                //   }
+
+            }
+
+
+
+    }
+    if (!($('#'+ tempID+'>div').hasClass('chessPices'))&&(color==="Black")) {
+        $('#'+tempID).addClass('selectPath');
+        selectpices.addClass('afterClick');
+        selectpices.removeClass('selectPath');
+    }
+    color="white";
 
 }
-$(".col-xs-1").click(function () {
+
+
+$(".col-xs-1.col-lg-1.col-sm-1").click(function () {
+
    var currenttile=$(this);
-   var currP=$(".chessPices.selectedPatch");
-   if(currenttile.hasClass('selectPath')){
+   var currP=$(".chessPices.afterClick");
+   if($(currenttile).hasClass('selectPath')){
        currenttile.append(currP);
-       chesspices.removeClass('selectedPatch')
-       tiles.removeClass('selectPath')
+       chesspices.removeClass('afterClick');
+       tiles.removeClass('selectPath');
+       ins=0;
+
    }
-    console.log(currenttile.hasClass('selectPath'));
-    //currenttile.append(currP);
+
+
 });
 
+//&&(ins===1)
 
