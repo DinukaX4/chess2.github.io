@@ -59,6 +59,13 @@
         .selectPath{
             background-color: green;
         }
+        img:hover{
+            position: absolute;
+            height: 90px;
+            width: 90px;
+            z-index: 9999;
+
+        }
 
 
 
@@ -77,30 +84,29 @@
     <div class="col-xs-12 col-sm-12  col-lg-12">
         <div class="row">
             <div class="col-xs-2 col-sm-2 col-lg-2">A</div>
-            <div id="A1" style="background-color: #1b6d85 ; height: 100px;width: 100px"
-                 class="col-xs-1 col-sm-1 col-lg-1">1
-                <img id="br1" src="Image/Rook-black_256x256_32.png" class="chess">
+            <div id="A1" style="background-color: #1b6d85 ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">
+                <div class="chessPices blackRook"><img id="br1" src="Image/Rook-black_256x256_32.png" class="chess"></div>
             </div>
             <div id="B1" style="background-color: black; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1 patch ">
-                <div class="chess-pices"><img src="Image/blackKnight.png"></div>
+                <div class="chessPices blackKnight"><img id="bKN1" src="Image/blackKnight.png"></div>
             </div>
             <div  id="C1" style="background-color: #1b6d85 ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1 patch">
-                <img src="Image/Bishop-black_256x256_32.png">
+                <div class="chessPices blackBishop"><img id="bbs1" src="Image/Bishop-black_256x256_32.png"></div>
             </div>
             <div  id="D1" style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1 patch">
-                <img src="Image/blackQuen.png" class="img-responsive">
+                <div class="chessPices BlackQuen"><img id="bq" src="Image/blackQuen.png" class="img-responsive"></div>
             </div>
             <div  id="E1" style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1 patch">
-                <img src="Image/blackKing.png" class="img-responsive">
+                <div class="chessPices BlackKing"><img id="bk" src="Image/blackKing.png" class="img-responsive"></div>
             </div>
             <div id="F1" style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1 patch">
-                <img src="Image/Bishop-black_256x256_32.png">
+                <div class="chessPices blackBishop"><img id="bbs2" src="Image/Bishop-black_256x256_32.png"></div>
             </div>
             <div id="G1" style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1 patch">
-                <img src="Image/blackKnight.png">
+                <div class="chessPices blackKnight"><img id="bKN2" src="Image/blackKnight.png"></div>
             </div>
             <div  id="H1" style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1 patch">
-                <img src="Image/Rook-black_256x256_32.png">
+                <div class="chessPices blackRook"><img id="br2" src="Image/Rook-black_256x256_32.png" class="chess"></div>
             </div>
 
 
@@ -245,15 +251,14 @@
         </div>
         <div class="row">
             <div class="col-xs-2 col-sm-2 col-lg-2">H</div>
-            <div id="A8" style="background-color: black  ; height: 100px;width: 100px"
-                 class="col-xs-1 col-sm-1 col-lg-1">
-                <img src="Image/Rook-white_256x256_32.png">
+            <div id="A8" style="background-color: black  ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1">
+                <div class="chessPices whiteRook"><img id="wr1" src="Image/Rook-white_256x256_32.png"></div>
             </div>
             <div  id="B8" style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1 patch ">
-                <img src="Image/Knight-white_256x256_32.png">
+                <div class="chessPices whiteKnight"><img id="wk1" src="Image/Knight-white_256x256_32.png"></div>
             </div>
             <div  id="C8" style="background-color: black ; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1 patch ">
-                <img src="Image/whiteBishop.png">
+                <div class="chessPices whiteBishop"><img id="wb1" src="Image/whiteBishop.png"></div>
             </div>
             <div  id="D8" style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1 patch ">
                 <img src="Image/King-white.ico">
@@ -262,13 +267,13 @@
                 <img src="Image/Queen-white_256x256_32.png">
             </div>
             <div  id="F8" style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1 patch ">
-                <img src="Image/whiteBishop.png">
+                <div class="chessPices whiteBishop"><img id="wb2" src="Image/whiteBishop.png"></div>
             </div>
             <div  id="G8" style="background-color: black; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1 patch ">
-                <img src="Image/Knight-white_256x256_32.png">
+                <div class="chessPices whiteKnight"><img id="wk2" src="Image/Knight-white_256x256_32.png"></div>
             </div>
             <div  id="H8" style="background-color: #1b6d85; height: 100px;width: 100px" class="col-xs-1 col-sm-1 col-lg-1 patch ">
-                <img src="Image/Rook-white_256x256_32.png">
+                <div class="chessPices whiteRook"><img id="wr2" src="Image/Rook-white_256x256_32.png"></div>
             </div>
 
 
