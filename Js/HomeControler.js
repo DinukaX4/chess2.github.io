@@ -70,10 +70,306 @@ $(".chessPices").click(function (evt) {
         whiteKnight(selectpices);
 
 
+    }if (!(selectpices.hasClass('afterClick')) && selectpices.hasClass('BlackKing')) {
+        blackKing(selectpices);
+
+
+    }if (!(selectpices.hasClass('afterClick')) && selectpices.hasClass('whiteKing')) {
+        whiteKing(selectpices);
+
+
     }
 
     //console.log(count);
 });
+function whiteKing(evt) {
+    selectpices = evt;
+    tiles.remove('selectPath');
+
+    chesspices.remove('selectPath');
+
+    var selectId = selectpices.parent().attr('id');
+    var selectPiceId = selectpices.children('img').attr('id');
+    var piceBrand = selectPiceId.substr(0, 2);
+    var fristLetter = selectId.charAt(0);
+    var tilesL = selectId.charAt(0);
+
+    var firstID = selectId.charAt(1);
+    // console.log(selectId);
+    // console.log(selectPiceId);
+    // console.log(piceBrand);
+
+    var indexoftheLetter = ($.inArray(fristLetter, tilesNames));
+    var indexOfNumber = ($.inArray(parseInt(firstID), tilesNumbers)
+    );
+    var tempID = tilesNames[indexoftheLetter] + tilesNumbers[indexOfNumber + 1];
+    var tempID2;
+    var tempID3;
+    var tempID4;
+    var tempID5;
+    var tempID6;
+    var tempID7;
+    var tempID8;
+    var tempID9;
+    //var tempID3;
+
+
+    var i = indexoftheLetter;
+    var j = indexOfNumber;
+    //  tempID=tilesNames[i]+tilesNames[(j+1)];
+    tempID2=tilesNames[(i-1)]+tilesNumbers[(j-1)];
+    tempID3=tilesNames[(i-1)]+tilesNumbers[(j+1)];
+    tempID4=tilesNames[i]+tilesNumbers[(j-1)];
+    tempID5=tilesNames[(i+1)]+tilesNumbers[(j-1)];
+    tempID6=tilesNames[(i-1)]+tilesNumbers[j];
+    tempID7=tilesNames[(i+1)]+tilesNumbers[j];
+    tempID8=tilesNames[(i+1)]+tilesNumbers[(j+1)];
+    tempID9=tilesNames[(i-1)]+tilesNumbers[(j+1)];
+
+    //console.log(tempID);
+    // console.log(tempID1);
+    //  console.log(tempID2);
+    console.log(tempID3);
+    //console.log(tempID4);
+    //console.log(tempID5);
+    //console.log(tempID6);
+    //console.log(tempID7);
+    //console.log(tempID8);
+    var whitePone = "wp";
+
+    if (!($('#' + tempID + '>div').hasClass('white')) && (color === "white")) {
+        $('#' + tempID).addClass('selectPath');
+        if (($('#' + tempID + '>div').hasClass('black'))) {
+            $('#' + tempID).addClass('remove');
+        }
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }
+    if (!($('#' + tempID2 + '>div').hasClass('white')) && (color === "white")) {
+        $('#' + tempID2).addClass('selectPath');
+        if (($('#' + tempID2 + '>div').hasClass('black'))) {
+            $('#' + tempID2).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }
+    if (!($('#' + tempID3 + '>div').hasClass('white')) && (color === "white")) {
+        $('#' + tempID3).addClass('selectPath');
+        if (($('#' + tempID3 + '>div').hasClass('black'))) {
+            $('#' + tempID3).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }
+    if (!($('#' + tempID4 + '>div').hasClass('white')) && (color === "white")) {
+        $('#' + tempID4).addClass('selectPath');
+        if (($('#' + tempID4 + '>div').hasClass('black'))) {
+            $('#' + tempID4).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }
+    if (!($('#' + tempID5 + '>div').hasClass('white')) && (color === "white")) {
+        $('#' + tempID5).addClass('selectPath');
+        if (($('#' + tempID5 + '>div').hasClass('black'))) {
+            $('#' + tempID5).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }
+    if (!($('#' + tempID6 + '>div').hasClass('white')) && (color === "white")) {
+        $('#' + tempID6).addClass('selectPath');
+        if (($('#' + tempID6 + '>div').hasClass('black'))) {
+            $('#' + tempID6).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }if (!($('#' + tempID7 + '>div').hasClass('white')) && (color === "white")) {
+        $('#' + tempID7).addClass('selectPath');
+        if (($('#' + tempID7 + '>div').hasClass('black'))) {
+            $('#' + tempID7).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }if (!($('#' + tempID8 + '>div').hasClass('white')) && (color === "white")) {
+        $('#' + tempID8).addClass('selectPath');
+        if (($('#' + tempID8 + '>div').hasClass('black'))) {
+            $('#' + tempID8).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }
+    if (!($('#' + tempID9 + '>div').hasClass('white')) && (color === "white")) {
+        $('#' + tempID9).addClass('selectPath');
+        if (($('#' + tempID9 + '>div').hasClass('black'))) {
+            $('#' + tempID9).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }
+    color="Black";
+}
+function blackKing(evt) {
+    selectpices = evt;
+    tiles.remove('selectPath');
+
+    chesspices.remove('selectPath');
+
+    var selectId = selectpices.parent().attr('id');
+    var selectPiceId = selectpices.children('img').attr('id');
+    var piceBrand = selectPiceId.substr(0, 2);
+    var fristLetter = selectId.charAt(0);
+    var tilesL = selectId.charAt(0);
+
+    var firstID = selectId.charAt(1);
+    // console.log(selectId);
+    // console.log(selectPiceId);
+    // console.log(piceBrand);
+
+    var indexoftheLetter = ($.inArray(fristLetter, tilesNames));
+    var indexOfNumber = ($.inArray(parseInt(firstID), tilesNumbers)
+    );
+    var tempID = tilesNames[indexoftheLetter] + tilesNumbers[indexOfNumber + 1];
+    var tempID2;
+    var tempID3;
+    var tempID4;
+    var tempID5;
+    var tempID6;
+    var tempID7;
+    var tempID8;
+    var tempID9;
+    //var tempID3;
+
+
+    var i = indexoftheLetter;
+    var j = indexOfNumber;
+ //  tempID=tilesNames[i]+tilesNames[(j+1)];
+    tempID2=tilesNames[(i-1)]+tilesNumbers[(j-1)];
+    tempID3=tilesNames[(i-1)]+tilesNumbers[(j+1)];
+    tempID4=tilesNames[i]+tilesNumbers[(j-1)];
+    tempID5=tilesNames[(i+1)]+tilesNumbers[(j-1)];
+    tempID6=tilesNames[(i-1)]+tilesNumbers[j];
+    tempID7=tilesNames[(i+1)]+tilesNumbers[j];
+    tempID8=tilesNames[(i+1)]+tilesNumbers[(j+1)];
+    tempID9=tilesNames[(i-1)]+tilesNumbers[(j+1)];
+
+    //console.log(tempID);
+   // console.log(tempID1);
+  //  console.log(tempID2);
+    console.log(tempID3);
+    //console.log(tempID4);
+    //console.log(tempID5);
+    //console.log(tempID6);
+    //console.log(tempID7);
+    //console.log(tempID8);
+    var whitePone = "wp";
+
+    if (!($('#' + tempID + '>div').hasClass('black')) && (color === "Black")) {
+        $('#' + tempID).addClass('selectPath');
+        if (($('#' + tempID + '>div').hasClass('white'))) {
+            $('#' + tempID).addClass('remove');
+        }
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }
+    if (!($('#' + tempID2 + '>div').hasClass('black')) && (color === "Black")) {
+        $('#' + tempID2).addClass('selectPath');
+        if (($('#' + tempID2 + '>div').hasClass('white'))) {
+            $('#' + tempID2).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }
+    if (!($('#' + tempID3 + '>div').hasClass('black')) && (color === "Black")) {
+        $('#' + tempID3).addClass('selectPath');
+        if (($('#' + tempID3 + '>div').hasClass('white'))) {
+            $('#' + tempID3).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }
+    if (!($('#' + tempID4 + '>div').hasClass('black')) && (color === "Black")) {
+        $('#' + tempID4).addClass('selectPath');
+        if (($('#' + tempID4 + '>div').hasClass('white'))) {
+            $('#' + tempID4).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }
+    if (!($('#' + tempID5 + '>div').hasClass('black')) && (color === "Black")) {
+        $('#' + tempID5).addClass('selectPath');
+        if (($('#' + tempID5 + '>div').hasClass('white'))) {
+            $('#' + tempID5).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }
+    if (!($('#' + tempID6 + '>div').hasClass('black')) && (color === "Black")) {
+        $('#' + tempID6).addClass('selectPath');
+        if (($('#' + tempID6 + '>div').hasClass('white'))) {
+            $('#' + tempID6).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }if (!($('#' + tempID7 + '>div').hasClass('black')) && (color === "Black")) {
+        $('#' + tempID7).addClass('selectPath');
+        if (($('#' + tempID7 + '>div').hasClass('white'))) {
+            $('#' + tempID7).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }if (!($('#' + tempID8 + '>div').hasClass('black')) && (color === "Black")) {
+        $('#' + tempID8).addClass('selectPath');
+        if (($('#' + tempID8 + '>div').hasClass('white'))) {
+            $('#' + tempID8).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }
+    if (!($('#' + tempID9 + '>div').hasClass('black')) && (color === "Black")) {
+        $('#' + tempID9).addClass('selectPath');
+        if (($('#' + tempID9 + '>div').hasClass('white'))) {
+            $('#' + tempID9).addClass('remove');
+        }
+        //
+        //console.log(tempID);
+        selectpices.addClass('afterClick');
+
+    }
+    color="white";
+}
 function whiteKnight(evt) {
     selectpices = evt;
     tiles.remove('selectPath');
@@ -1333,8 +1629,8 @@ function whitePone(evt) {
     var j = indexOfNumber;
     tempID2=tilesNames[(i+1)]+tilesNumbers[(j-1)];
     tempID3=tilesNames[(i-1)]+tilesNumbers[(j-1)];
-    console.log(tempID2);
-    console.log(tempID3);
+    // console.log(tempID2);
+    // console.log(tempID3);
     if (!($('#' + tempID2 + '>div').hasClass('white')) && (color === "white")) {
 
         if (($('#' + tempID2 + '>div').hasClass('black'))) {
