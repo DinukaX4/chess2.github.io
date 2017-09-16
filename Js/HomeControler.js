@@ -7,6 +7,14 @@ var tiles;
 var chesspices;
 var count;
 var color = "white";
+// var audio=document.getElementsByTagName("audio")[0];
+// var audio2=document.getElementsByTagName("audio")[1];
+// audio2.play();
+var audio = document.getElementById("aud1");
+var audio2 = document.getElementById("aud2");
+var audio3 = document.getElementById("aud3");
+
+
 $(document).ready(function () {
     chesspices = $(".chessPices");
     tiles = $(".col-xs-1.col-sm-1.col-lg-1");
@@ -70,11 +78,13 @@ $(".chessPices").click(function (evt) {
         whiteKnight(selectpices);
 
 
-    }if (!(selectpices.hasClass('afterClick')) && selectpices.hasClass('BlackKing')) {
+    }
+    if (!(selectpices.hasClass('afterClick')) && selectpices.hasClass('BlackKing')) {
         blackKing(selectpices);
 
 
-    }if (!(selectpices.hasClass('afterClick')) && selectpices.hasClass('whiteKing')) {
+    }
+    if (!(selectpices.hasClass('afterClick')) && selectpices.hasClass('whiteKing')) {
         whiteKing(selectpices);
 
 
@@ -117,14 +127,14 @@ function whiteKing(evt) {
     var i = indexoftheLetter;
     var j = indexOfNumber;
     //  tempID=tilesNames[i]+tilesNames[(j+1)];
-    tempID2=tilesNames[(i-1)]+tilesNumbers[(j-1)];
-    tempID3=tilesNames[(i-1)]+tilesNumbers[(j+1)];
-    tempID4=tilesNames[i]+tilesNumbers[(j-1)];
-    tempID5=tilesNames[(i+1)]+tilesNumbers[(j-1)];
-    tempID6=tilesNames[(i-1)]+tilesNumbers[j];
-    tempID7=tilesNames[(i+1)]+tilesNumbers[j];
-    tempID8=tilesNames[(i+1)]+tilesNumbers[(j+1)];
-    tempID9=tilesNames[(i-1)]+tilesNumbers[(j+1)];
+    tempID2 = tilesNames[(i - 1)] + tilesNumbers[(j - 1)];
+    tempID3 = tilesNames[(i - 1)] + tilesNumbers[(j + 1)];
+    tempID4 = tilesNames[i] + tilesNumbers[(j - 1)];
+    tempID5 = tilesNames[(i + 1)] + tilesNumbers[(j - 1)];
+    tempID6 = tilesNames[(i - 1)] + tilesNumbers[j];
+    tempID7 = tilesNames[(i + 1)] + tilesNumbers[j];
+    tempID8 = tilesNames[(i + 1)] + tilesNumbers[(j + 1)];
+    tempID9 = tilesNames[(i - 1)] + tilesNumbers[(j + 1)];
 
     //console.log(tempID);
     // console.log(tempID1);
@@ -195,7 +205,8 @@ function whiteKing(evt) {
         //console.log(tempID);
         selectpices.addClass('afterClick');
 
-    }if (!($('#' + tempID7 + '>div').hasClass('white')) && (color === "white")) {
+    }
+    if (!($('#' + tempID7 + '>div').hasClass('white')) && (color === "white")) {
         $('#' + tempID7).addClass('selectPath');
         if (($('#' + tempID7 + '>div').hasClass('black'))) {
             $('#' + tempID7).addClass('remove');
@@ -204,7 +215,8 @@ function whiteKing(evt) {
         //console.log(tempID);
         selectpices.addClass('afterClick');
 
-    }if (!($('#' + tempID8 + '>div').hasClass('white')) && (color === "white")) {
+    }
+    if (!($('#' + tempID8 + '>div').hasClass('white')) && (color === "white")) {
         $('#' + tempID8).addClass('selectPath');
         if (($('#' + tempID8 + '>div').hasClass('black'))) {
             $('#' + tempID8).addClass('remove');
@@ -224,7 +236,8 @@ function whiteKing(evt) {
         selectpices.addClass('afterClick');
 
     }
-    color="Black";
+
+    color = "Black";
 }
 function blackKing(evt) {
     selectpices = evt;
@@ -260,19 +273,19 @@ function blackKing(evt) {
 
     var i = indexoftheLetter;
     var j = indexOfNumber;
- //  tempID=tilesNames[i]+tilesNames[(j+1)];
-    tempID2=tilesNames[(i-1)]+tilesNumbers[(j-1)];
-    tempID3=tilesNames[(i-1)]+tilesNumbers[(j+1)];
-    tempID4=tilesNames[i]+tilesNumbers[(j-1)];
-    tempID5=tilesNames[(i+1)]+tilesNumbers[(j-1)];
-    tempID6=tilesNames[(i-1)]+tilesNumbers[j];
-    tempID7=tilesNames[(i+1)]+tilesNumbers[j];
-    tempID8=tilesNames[(i+1)]+tilesNumbers[(j+1)];
-    tempID9=tilesNames[(i-1)]+tilesNumbers[(j+1)];
+    //  tempID=tilesNames[i]+tilesNames[(j+1)];
+    tempID2 = tilesNames[(i - 1)] + tilesNumbers[(j - 1)];
+    tempID3 = tilesNames[(i - 1)] + tilesNumbers[(j + 1)];
+    tempID4 = tilesNames[i] + tilesNumbers[(j - 1)];
+    tempID5 = tilesNames[(i + 1)] + tilesNumbers[(j - 1)];
+    tempID6 = tilesNames[(i - 1)] + tilesNumbers[j];
+    tempID7 = tilesNames[(i + 1)] + tilesNumbers[j];
+    tempID8 = tilesNames[(i + 1)] + tilesNumbers[(j + 1)];
+    tempID9 = tilesNames[(i - 1)] + tilesNumbers[(j + 1)];
 
     //console.log(tempID);
-   // console.log(tempID1);
-  //  console.log(tempID2);
+    // console.log(tempID1);
+    //  console.log(tempID2);
     console.log(tempID3);
     //console.log(tempID4);
     //console.log(tempID5);
@@ -339,7 +352,8 @@ function blackKing(evt) {
         //console.log(tempID);
         selectpices.addClass('afterClick');
 
-    }if (!($('#' + tempID7 + '>div').hasClass('black')) && (color === "Black")) {
+    }
+    if (!($('#' + tempID7 + '>div').hasClass('black')) && (color === "Black")) {
         $('#' + tempID7).addClass('selectPath');
         if (($('#' + tempID7 + '>div').hasClass('white'))) {
             $('#' + tempID7).addClass('remove');
@@ -348,7 +362,8 @@ function blackKing(evt) {
         //console.log(tempID);
         selectpices.addClass('afterClick');
 
-    }if (!($('#' + tempID8 + '>div').hasClass('black')) && (color === "Black")) {
+    }
+    if (!($('#' + tempID8 + '>div').hasClass('black')) && (color === "Black")) {
         $('#' + tempID8).addClass('selectPath');
         if (($('#' + tempID8 + '>div').hasClass('white'))) {
             $('#' + tempID8).addClass('remove');
@@ -368,7 +383,7 @@ function blackKing(evt) {
         selectpices.addClass('afterClick');
 
     }
-    color="white";
+    color = "white";
 }
 function whiteKnight(evt) {
     selectpices = evt;
@@ -1627,8 +1642,8 @@ function whitePone(evt) {
 
     var i = indexoftheLetter;
     var j = indexOfNumber;
-    tempID2=tilesNames[(i+1)]+tilesNumbers[(j-1)];
-    tempID3=tilesNames[(i-1)]+tilesNumbers[(j-1)];
+    tempID2 = tilesNames[(i + 1)] + tilesNumbers[(j - 1)];
+    tempID3 = tilesNames[(i - 1)] + tilesNumbers[(j - 1)];
     // console.log(tempID2);
     // console.log(tempID3);
     if (!($('#' + tempID2 + '>div').hasClass('white')) && (color === "white")) {
@@ -1640,7 +1655,8 @@ function whitePone(evt) {
 
         selectpices.addClass('afterClick');
 
-    }if (!($('#' + tempID3 + '>div').hasClass('white')) && (color === "white")) {
+    }
+    if (!($('#' + tempID3 + '>div').hasClass('white')) && (color === "white")) {
 
         if (($('#' + tempID3 + '>div').hasClass('black'))) {
             $('#' + tempID3).addClass('remove');
@@ -1706,8 +1722,8 @@ function bp1patch(evt) {
     var whitePone = "wp";
     // console.log(whitePone);
     // console.log("J " + j);
-    tempID2=tilesNames[(i+1)]+tilesNumbers[(j)];
-    tempID3=tilesNames[(i-1)]+tilesNumbers[(j)];
+    tempID2 = tilesNames[(i + 1)] + tilesNumbers[(j)];
+    tempID3 = tilesNames[(i - 1)] + tilesNumbers[(j)];
 
     if (!($('#' + tempID2 + '>div').hasClass('black')) && (color === "Black")) {
 
@@ -1718,7 +1734,8 @@ function bp1patch(evt) {
 
         selectpices.addClass('afterClick');
 
-    }if (!($('#' + tempID3 + '>div').hasClass('black')) && (color === "Black")) {
+    }
+    if (!($('#' + tempID3 + '>div').hasClass('black')) && (color === "Black")) {
 
         if (($('#' + tempID3 + '>div').hasClass('white'))) {
             $('#' + tempID3).addClass('remove');
@@ -1729,7 +1746,7 @@ function bp1patch(evt) {
 
     }
 
-    for (var run=0;run<2;run++){
+    for (var run = 0; run < 2; run++) {
 
     }
     for (; j < 4; j++) {
@@ -1771,9 +1788,9 @@ $(".col-xs-1.col-lg-1.col-sm-1").click(function () {
     var currP = $(".chessPices.afterClick");
 
 
-
     if ($(currenttile).hasClass('selectPath')) {
         currenttile.append(currP);
+        audio2.play();
         chesspices.removeClass('afterClick');
         tiles.removeClass('selectPath');
         tiles.removeClass('remove');
@@ -1789,7 +1806,7 @@ $(".black").click(function (evt) {
     if ($(currenttile).hasClass('remove') && ($(currenttile).hasClass('selectPath'))) {
 
         $(this).remove();
-
+        audio3.play();
         color = "Black";
     }
 
@@ -1801,10 +1818,16 @@ $(".white").click(function (evt) {
     if ($(currenttile).hasClass('remove') && ($(currenttile).hasClass('selectPath'))) {
 
         $(this).remove();
-
+        audio3.play();
         color = "white";
     }
 
+});
+function checkmates() {
+
+}
+$(".chessPices").click(function (evt) {
+    audio.play();
 });
 
 
