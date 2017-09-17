@@ -10,6 +10,7 @@ var color = "white";
 // var audio=document.getElementsByTagName("audio")[0];
 // var audio2=document.getElementsByTagName("audio")[1];
 // audio2.play();
+var kingsPath;
 var audio = document.getElementById("aud1");
 var audio2 = document.getElementById("aud2");
 var audio3 = document.getElementById("aud3");
@@ -19,6 +20,7 @@ $(document).ready(function () {
     chesspices = $(".chessPices");
     tiles = $(".col-xs-1.col-sm-1.col-lg-1");
     count = 0;
+
 });
 
 $("img").addClass("img-responsive");
@@ -139,7 +141,7 @@ function whiteKing(evt) {
     //console.log(tempID);
     // console.log(tempID1);
     //  console.log(tempID2);
-    console.log(tempID3);
+    //console.log(tempID3);
     //console.log(tempID4);
     //console.log(tempID5);
     //console.log(tempID6);
@@ -1145,12 +1147,14 @@ function whiteBishop(evt) {
     for (; j < 8 && i < 8; j++) {
         i = i + 1;
         tempID = tilesNames[i] + tilesNumbers[j];
+
         //console.log(tempID);
 
         if (!($('#' + tempID + '>div').hasClass('white')) && (color === "white")) {
             $('#' + tempID).addClass('selectPath');
             if (($('#' + tempID + '>div').hasClass('black'))) {
                 $('#' + tempID).addClass('remove');
+
                 break;
             }
             //console.log(tempID);
@@ -1176,6 +1180,7 @@ function whiteBishop(evt) {
             $('#' + tempID).addClass('selectPath');
             if (($('#' + tempID + '>div').hasClass('black'))) {
                 $('#' + tempID).addClass('remove');
+
                 break;
             }
             //console.log(tempID);
@@ -1202,6 +1207,7 @@ function whiteBishop(evt) {
             $('#' + tempID).addClass('selectPath');
             if (($('#' + tempID + '>div').hasClass('black'))) {
                 $('#' + tempID).addClass('remove');
+
                 break;
             }
             //console.log(tempID);
@@ -1227,6 +1233,7 @@ function whiteBishop(evt) {
             $('#' + tempID).addClass('selectPath');
             if (($('#' + tempID + '>div').hasClass('black'))) {
                 $('#' + tempID).addClass('remove');
+
                 break;
             }
             //console.log(tempID);
@@ -1240,6 +1247,7 @@ function whiteBishop(evt) {
 
 
     }
+
     color = "Black";
 }
 function blackBishop(evt) {
@@ -1814,6 +1822,17 @@ $(".black").click(function (evt) {
 $(".white").click(function (evt) {
 
     var currenttile = $(this).parent('div');
+    var cID=$(this).children('img').attr('id');
+    // if(cID==="wk"){
+    //     alert("You can't remove King");
+    // }else{
+    //     if ($(currenttile).hasClass('remove') && ($(currenttile).hasClass('selectPath'))) {
+    //
+    //         $(this).remove();
+    //         audio3.play();
+    //         color = "white";
+    //     }
+    // }
     var currP = $(".chessPices.afterClick");
     if ($(currenttile).hasClass('remove') && ($(currenttile).hasClass('selectPath'))) {
 
@@ -1829,6 +1848,7 @@ function checkmates() {
 $(".chessPices").click(function (evt) {
     audio.play();
 });
+
 
 
 

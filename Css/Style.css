@@ -1,20 +1,83 @@
- * {
-            color: aliceblue;
-            background-color: black;
-           /* background-image: url('F:\Images\Wallpaper\Newfolder\3D_Wallpapers-881_PlIyPRj');
-            /*This is a comment*/
-        }
+body {
+    background-image: url("../Image/background.jpg");
 
-        h3 {
-            color: red;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 72px;
-        }
+}
 
-        #header-2,
-        header-1 {
-            font-size: 72px;
-        }
-        .dog{
-            background-color: green;
-        }
+#board {
+
+    width: 1000px;
+    height: 900px;
+    text-align: center;
+}
+
+#Header {
+    text-align: center;
+    font-size: 50px;
+    font-family: "Times New Roman";
+    font-weight: bold;
+}
+
+div {
+    border-bottom: none;
+    text-align: center;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    z-index: 999;
+
+}
+
+.selectPath {
+    background-color: green;
+}
+
+.chessPices {
+    position: absolute;
+    padding-top: 0px;
+    padding-left: 0px;
+    height: 100px;
+
+    width: 100px;
+
+    z-index: 99999;
+}
+
+img:hover {
+    cursor: pointer;
+    position: absolute;
+    height: 90px;
+    width: 90px;
+    z-index: 9999;
+
+}
+
+.d1 {
+    background-color: #1b6d85;
+    height: 100px;
+
+    width: 100px;
+
+}
+
+.d2 {
+    background-color: black;
+    height: 100px;
+    width: 100px;
+}
+
+.selectPath {
+    -webkit-box-shadow: inset 0px 0px 6px 10px rgba(124, 252, 0, .8);
+    box-shadow: inset 0px 0px 6px 10px rgba(124, 252, 0, .8);
+}
+
+.remove {
+    -webkit-box-shadow: inset 0px 0px 6px 10px rgba(128, 0, 0, .8);
+    box-shadow: inset 0px 0px 6px 10px rgba(128, 0, 0, .8);
+}

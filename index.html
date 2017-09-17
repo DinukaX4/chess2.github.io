@@ -8,93 +8,7 @@
     <link rel="stylesheet" href="Css/bootstrap.css">
     <link rel="stylesheet" href="Css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="Css/bootstrap.min.css">
-    <style>
-        body {
-            background-image: url("Image/backGround.jpg");
-
-        }
-
-        #board {
-
-            width: 1000px;
-            height: 900px;
-            text-align: center;
-        }
-
-        #Header {
-            text-align: center;
-            font-size: 50px;
-            font-family: "Times New Roman";
-            font-weight: bold;
-        }
-
-        div {
-            border-bottom: none;
-            text-align: center;
-            margin-top: 0px;
-            margin-left: 0px;
-            margin-right: 0px;
-            margin-bottom: 0px;
-
-        }
-
-        img {
-            width: 80px;
-            height: 80px;
-            z-index: 999;
-
-        }
-
-        .selectPath {
-            background-color: green;
-        }
-
-        .chessPices {
-            position: absolute;
-            padding-top: 0px;
-            padding-left: 0px;
-            height: 100px;
-
-            width: 100px;
-
-            z-index: 99999;
-        }
-
-        img:hover {
-            cursor: pointer;
-            position: absolute;
-            height: 90px;
-            width: 90px;
-            z-index: 9999;
-
-        }
-
-        .d1 {
-            background-color: #1b6d85;
-            height: 100px;
-
-            width: 100px;
-
-        }
-
-        .d2 {
-            background-color: black;
-            height: 100px;
-            width: 100px;
-        }
-
-        .selectPath {
-            -webkit-box-shadow: inset 0px 0px 6px 10px rgba(124, 252, 0, .8);
-            box-shadow: inset 0px 0px 6px 10px rgba(124, 252, 0, .8);
-        }
-
-        .remove {
-            -webkit-box-shadow: inset 0px 0px 6px 10px rgba(128, 0, 0, .8);
-            box-shadow: inset 0px 0px 6px 10px rgba(128, 0, 0, .8);
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="Css/Style.css">
 
 </head>
 <body>
@@ -112,7 +26,8 @@
 <div class="row">
     <div id="Header" class="col-xs-12 col-sm-12  col-lg-12"> CHESS GAME</div>
 </div>
-<div id="board" class="row">
+<div id="board" class="row container">
+
     <div class="col-xs-12 col-sm-12  col-lg-12">
         <div class="row">
             <div class="col-xs-2 col-sm-2 col-lg-2"></div>
@@ -315,6 +230,8 @@
         </div>
 
     </div>
+
+
 </div>
 
 <script src="Js/jquery-3.2.1.min.js"></script>
